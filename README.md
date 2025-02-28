@@ -48,7 +48,7 @@ A simple memory card game built with React, TypeScript, and Vite, using ShadCN a
 1. Clone the repository:
    ```sh
    git clone https://github.com/nethitters/memory-game.git
-   cd memory-card-game
+   cd memory-game
    ```
 2. Install dependencies:
    ```sh
@@ -74,10 +74,12 @@ A simple memory card game built with React, TypeScript, and Vite, using ShadCN a
 ├── .storybook       # Storybook configuration
 ├── src
 │   ├── components   # React components
+│   ├── stories      # Component stories for Storybook
 │   ├── assets       # Images and static files
-│   ├── styles       # TailwindCSS configuration
 │   ├── tests        # Unit and integration tests
+│   ├── utils        # Utilities
 │   ├── App.tsx      # Main application component
+│   ├── index.css    # TailwindCSS configuration
 │   ├── index.tsx    # Entry point
 ├── public           # Static public files
 ├── .eslintrc.js     # ESLint configuration
