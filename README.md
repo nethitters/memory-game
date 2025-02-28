@@ -47,7 +47,7 @@ A simple memory card game built with React, TypeScript, and Vite, using ShadCN a
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/to-be-determined/memory-card-game.git
+   git clone https://github.com/nethitters/memory-game.git
    cd memory-card-game
    ```
 2. Install dependencies:
