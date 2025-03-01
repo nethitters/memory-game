@@ -6,6 +6,7 @@ import type { UserConfig } from "vite";
 
 // Define the Vite config with proper type casting
 export default defineConfig({
+  base: "/memory-game/",
   plugins: [react()],
   test: {
     globals: true,

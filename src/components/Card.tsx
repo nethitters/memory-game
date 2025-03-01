@@ -16,7 +16,7 @@ export default function Card({ uniqueId, image, flipped, handleCardClick }: Card
     >
       <div className={`flip-card-inner ${flipped ? "rotate-y-180" : ""}`}>
         <div className="flip-card-front bg-blue-500 flex items-center justify-center rounded-lg text-2xl">
-          <img src="/images/card-face.png" alt="Card" />
+          <img src={`${import.meta.env.BASE_URL}images/card-face.png`} alt="Card" />
         </div>
         <div className="flip-card-back bg-blue-500 flex items-center justify-center rounded-lg">
           <img src={image} alt="Card" className="w-full h-full object-cover rounded-lg" />
