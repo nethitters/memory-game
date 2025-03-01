@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Board from "./components/Board";
 import PlayerInfo from "./components/PlayerInfo";
 import DifficultySelector from "./components/DifficultySelector";
