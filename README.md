@@ -2,12 +2,18 @@
 
 A simple memory card game built with React, TypeScript, and Vite, using ShadCN and TailwindCSS for styling.
 
+## Live Demo 🎮
+
+Play the game here: [Memory Card Game](https://nethitters.github.io/memory-game/)
+
 ## Features
 
 - **Shuffle and Flip Logic**: Cards are shuffled and displayed face-down until flipped.
 - **Turn-Based Gameplay**: Players take turns flipping two cards at a time.
 - **Game Progress Tracking**: Tracks matched pairs and determines when the game is complete.
-- **Card Design**: Cards use images instead of numbers for a more engaging experience.
+- **Card Design**: Uses images instead of numbers for a more engaging experience.
+- **Difficulty Levels**: Choose between **Easy**, **Medium**, and **Hard**.
+- **Player Timers**: Each player has their own countdown timer.
 - **Animated Reset Button**: Resets the game with a zoom-in-out animation.
 - **Testing**: Jest and React Testing Library are used for unit and integration tests.
 
@@ -31,8 +37,6 @@ A simple memory card game built with React, TypeScript, and Vite, using ShadCN a
 
 ### Testing
 
-- **[Storybook](https://storybook.js.org/)** - A tool for building and testing UI components in isolation.
-
 - **[Jest](https://jestjs.io/)** - A JavaScript testing framework.
 
 - **[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)** - Used for testing UI interactions.
@@ -43,7 +47,7 @@ A simple memory card game built with React, TypeScript, and Vite, using ShadCN a
 - **[Prettier](https://prettier.io/)** - A code formatter to maintain styling consistency.
 - **[TypeScript ESLint](https://typescript-eslint.io/)** - Integrates ESLint with TypeScript.
 
-## add
+## Getting Started
 
 1. Clone the repository:
    ```sh
