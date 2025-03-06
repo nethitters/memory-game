@@ -15,7 +15,14 @@ Play the game here: [Memory Card Game](https://nethitters.github.io/memory-game/
 - **Difficulty Levels**: Choose between **Easy**, **Medium**, and **Hard**.
 - **Player Timers**: Each player has their own countdown timer.
 - **Animated Reset Button**: Resets the game with a zoom-in-out animation.
+- **Multiple Game Modes**: Play **Multiplayer**, **Survival**, or try upcoming **Online Play**.
 - **Testing**: Jest and React Testing Library are used for unit and integration tests.
+
+## Game Modes 🕹️
+
+- **Multiplayer Mode**: Classic two-player mode where players take turns to match pairs.
+- **Survival Mode**: Race against the clock in a single-player challenge.
+- **(Coming Soon) Online Play**: Play against friends remotely!
 
 ## Technologies Used
 
@@ -26,6 +33,7 @@ Play the game here: [Memory Card Game](https://nethitters.github.io/memory-game/
 ### Frameworks & Libraries
 
 - **[React](https://react.dev/)** - A JavaScript library for building user interfaces.
+- **[React Router](https://reactrouter.com/)** - Enables navigation between game modes.
 - **[TypeScript](https://www.typescriptlang.org/)** - A strongly typed programming language that builds on JavaScript.
 - **[Vite](https://vitejs.dev/)** - A fast development build tool for modern frontend applications.
 - **[ShadCN](https://ui.shadcn.com/)** - A set of beautifully styled UI components for React.
@@ -38,7 +46,6 @@ Play the game here: [Memory Card Game](https://nethitters.github.io/memory-game/
 ### Testing
 
 - **[Jest](https://jestjs.io/)** - A JavaScript testing framework.
-
 - **[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)** - Used for testing UI interactions.
 
 ### Linting & Code Quality
@@ -78,6 +85,8 @@ Play the game here: [Memory Card Game](https://nethitters.github.io/memory-game/
 ├── .storybook       # Storybook configuration
 ├── src
 │   ├── components   # React components
+│   ├── modes        # Contains different game modes
+│   ├── pages        # High-level pages
 │   ├── stories      # Component stories for Storybook
 │   ├── assets       # Images and static files
 │   ├── tests        # Unit and integration tests
