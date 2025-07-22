@@ -1,4 +1,5 @@
 import React from "react";
+import { Hourglass } from "lucide-react";
 
 interface PlayerInfoProps {
   name: string;
@@ -26,7 +27,13 @@ const PlayerInfo: React.FC<PlayerInfoProps> = ({
       <p className="text-lg font-semibold text-gray-700">{name}</p>
       <p className="text-md text-gray-600">Correct: {correctAnswers}</p>
       <p className={`text-md font-semibold mt-1 ${getTimeClass(timeLeft)}`}>
-        {gameOver ? "Time's Up!" : `⏳ ${timeLeft}s`}
+        {gameOver ? (
+          "Time's Up!"
+        ) : (
+          <span className="flex items-center">
+            <Hourglass size={18} className="mr-1" /> {timeLeft}s
+          </span>
+        )}
       </p>
     </div>
   );

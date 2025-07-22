@@ -5,6 +5,7 @@ import PlayerInfo from "../components/PlayerInfo";
 import DifficultySelector from "../components/DifficultySelector";
 import ResetButton from "../components/ResetButton";
 import generateShuffledCards, { DifficultyLevel } from "../utils/generateShuffledCards";
+import { Home } from 'lucide-react';
 
 export default function MultiplayerGame() {
   const timeLimits: Record<DifficultyLevel, { p1: number; p2: number }> = {
@@ -173,7 +174,8 @@ export default function MultiplayerGame() {
       {/* Reset Button */}
       <ResetButton resetGame={resetGame} difficulty={difficulty} />
 
-      <Link to="/" className="mt-6 px-6 py-3 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition">
+      <Link to="/" className="mt-6 px-6 py-3 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition flex items-center gap-x-2">
+        <Home size={20} />
         Back to Home
       </Link>
     </div>

@@ -4,6 +4,8 @@ import Board from "../components/Board";
 import ResetButton from "../components/ResetButton";
 import DifficultySelector from "../components/DifficultySelector";
 import generateShuffledCards, { DifficultyLevel } from "../utils/generateShuffledCards";
+import { Home } from 'lucide-react';
+import { Hourglass } from "lucide-react";
 
 export default function SurvivalGame() {
   const timeLimits: Record<DifficultyLevel, number> = {
@@ -104,7 +106,13 @@ export default function SurvivalGame() {
       </div>
 
       <p className="text-lg font-semibold text-gray-700 mt-2">
-        {gameOver ? "Game Over!" : `⏳ Time Left: ${timeLeft}s`}
+        {gameOver ? (
+          "Game Over!"
+        ) : (
+          <span className="flex items-center">
+            <Hourglass size={18} className="mr-1" /> {timeLeft}s
+          </span>
+        )}
       </p>
       <p className="text-md mt-2 text-gray-600">Score: {score}</p>
 
@@ -112,7 +120,8 @@ export default function SurvivalGame() {
 
       <ResetButton resetGame={resetGame} difficulty={difficulty} />
       
-      <Link to="/" className="mt-6 px-6 py-3 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition">
+      <Link to="/" className="mt-6 px-6 py-3 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition flex items-center gap-x-2">
+        <Home size={20} />
         Back to Home
       </Link>
     </div>

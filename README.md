@@ -36,8 +36,9 @@ Play the game here: [Memory Card Game](https://nethitters.github.io/memory-game/
 - **[React Router](https://reactrouter.com/)** - Enables navigation between game modes.
 - **[TypeScript](https://www.typescriptlang.org/)** - A strongly typed programming language that builds on JavaScript.
 - **[Vite](https://vitejs.dev/)** - A fast development build tool for modern frontend applications.
-- **[ShadCN](https://ui.shadcn.com/)** - A set of beautifully styled UI components for React.
 - **[TailwindCSS](https://tailwindcss.com/)** - A utility-first CSS framework for styling.
+- **[ShadCN](https://ui.shadcn.com/)** - A set of beautifully styled UI components for React.
+- **[Lucide React](https://www.npmjs.com/package/lucide-react)** - Icon library for consistent, lightweight UI elements.
 
 ### State Management
 
