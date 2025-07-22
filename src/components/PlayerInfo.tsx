@@ -7,6 +7,7 @@ interface PlayerInfoProps {
   timeLeft: number;
   gameOver: boolean;
   getTimeClass: (timeLeft: number) => string;
+  isCountingDown: boolean;
   align?: "left" | "center" | "right";
 }
 
@@ -16,6 +17,7 @@ const PlayerInfo: React.FC<PlayerInfoProps> = ({
   timeLeft,
   gameOver,
   getTimeClass,
+  isCountingDown,
   align = "center",
 }) => {
   return (
@@ -31,7 +33,8 @@ const PlayerInfo: React.FC<PlayerInfoProps> = ({
           "Time's Up!"
         ) : (
           <span className="flex items-center">
-            <Hourglass size={18} className="mr-1" /> {timeLeft}s
+            <Hourglass size={18} className={`mr-1 ${isCountingDown && !gameOver ? "animate-spin-slow" : ""}`} />
+            {timeLeft}s
           </span>
         )}
       </p>

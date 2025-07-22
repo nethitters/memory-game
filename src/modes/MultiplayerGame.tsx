@@ -5,13 +5,21 @@ import PlayerInfo from "../components/PlayerInfo";
 import DifficultySelector from "../components/DifficultySelector";
 import ResetButton from "../components/ResetButton";
 import generateShuffledCards, { DifficultyLevel } from "../utils/generateShuffledCards";
-import { Home } from 'lucide-react';
+import { Volume2, VolumeX, Home } from 'lucide-react';
 
 export default function MultiplayerGame() {
+  const clickSound = new Audio(`${import.meta.env.BASE_URL}sounds/card_flip.wav`);
+  const matchSound = new Audio(`${import.meta.env.BASE_URL}sounds/match_sound_soft.wav`);
+
   const timeLimits: Record<DifficultyLevel, { p1: number; p2: number }> = {
     easy: { p1: 60, p2: 60 },
     medium: { p1: 90, p2: 90 },
     hard: { p1: 120, p2: 120 },
+  };
+
+  const getInitialSoundSetting = () => {
+    const saved = localStorage.getItem("soundEnabled");
+    return saved === null ? true : saved === "true";
   };
 
   const [difficulty, setDifficulty] = useState<DifficultyLevel>("medium");
@@ -24,6 +32,7 @@ export default function MultiplayerGame() {
   const [timeLeftP1, setTimeLeftP1] = useState(timeLimits[difficulty].p1);
   const [timeLeftP2, setTimeLeftP2] = useState(timeLimits[difficulty].p2);
   const [timerRunning, setTimerRunning] = useState(false);
+  const [soundEnabled, setSoundEnabled] = useState(getInitialSoundSetting);
 
   useEffect(() => {
     if (!timerRunning || gameOver) return; // Stop timer when game is over
@@ -46,6 +55,15 @@ export default function MultiplayerGame() {
 
     return () => clearTimeout(timer);
   }, [timerRunning, timeLeftP1, timeLeftP2, playerTurn, gameOver]);
+
+  useEffect(() => {
+    const saved = localStorage.getItem('soundEnabled');
+    if (saved !== null) setSoundEnabled(saved === 'true');
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("soundEnabled", String(soundEnabled));
+  }, [soundEnabled]);
 
   const handleDifficultyChange = (newDifficulty: DifficultyLevel) => {
     setDifficulty(newDifficulty);
@@ -87,6 +105,8 @@ export default function MultiplayerGame() {
   const handleCardClick = (uniqueId: number) => {
     if (gameOver || flipped.length === 2 || flipped.includes(uniqueId)) return; // Stop if game is over
 
+    if (soundEnabled) clickSound.play(); // 🔊 Play sound
+
     if (!timerRunning) setTimerRunning(true); // Start timer on first move
 
     const newFlipped = [...flipped, uniqueId];
@@ -100,6 +120,8 @@ export default function MultiplayerGame() {
       if (!firstCard || !secondCard) return;
 
       if (firstCard.id === secondCard.id) {
+        if (soundEnabled) matchSound.play(); // 🔊 Play match sound
+
         setCards((prevCards) => {
           const updatedCards = prevCards.map((card) =>
             card.id === firstCard.id ? { ...card, matched: true } : card
@@ -145,6 +167,7 @@ export default function MultiplayerGame() {
           timeLeft={timeLeftP1}
           gameOver={gameOver}
           getTimeClass={getTimeClass}
+          isCountingDown={timerRunning && playerTurn === 1}
           align="left"
         />
 
@@ -161,6 +184,7 @@ export default function MultiplayerGame() {
           timeLeft={timeLeftP2}
           gameOver={gameOver}
           getTimeClass={getTimeClass}
+          isCountingDown={timerRunning && playerTurn === 2}
           align="right"
         />
       </div>
@@ -178,6 +202,14 @@ export default function MultiplayerGame() {
         <Home size={20} />
         Back to Home
       </Link>
+
+      <button
+        onClick={() => setSoundEnabled(!soundEnabled)}
+        className="mt-4 px-4 py-2 flex items-center gap-x-2 text-sm text-gray-700 hover:text-black transition"
+      >
+        {soundEnabled ? <Volume2 size={20} /> : <VolumeX size={20} />}
+        {soundEnabled ? "Sound On" : "Sound Off"}
+      </button>
     </div>
   );
 }

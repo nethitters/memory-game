@@ -110,7 +110,7 @@ export default function SurvivalGame() {
           "Game Over!"
         ) : (
           <span className="flex items-center">
-            <Hourglass size={18} className="mr-1" /> {timeLeft}s
+            <Hourglass size={18}  className={`mr-1 ${timerRunning && !gameOver ? "animate-spin-slow" : ""}`} /> {timeLeft}s
           </span>
         )}
       </p>
