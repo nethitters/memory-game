@@ -46,8 +46,6 @@ Play the game here: [Memory Card Game](https://nethitters.github.io/memory-game/
 
 ### Testing
 
-### Testing
-
 - **[Vitest](https://vitest.dev/)** - A blazing-fast test runner built for Vite.
 - **[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)** - Tests UI components by simulating user behavior.
 
@@ -85,23 +83,26 @@ Play the game here: [Memory Card Game](https://nethitters.github.io/memory-game/
 
 ```
 .
-├── .storybook       # Storybook configuration
-├── src
-│   ├── components   # React components
-│   ├── modes        # Contains different game modes
-│   ├── pages        # High-level pages
-│   ├── stories      # Component stories for Storybook
-│   ├── assets       # Images and static files
-│   ├── tests        # Unit and integration tests
-│   ├── utils        # Utilities
-│   ├── App.tsx      # Main application component
-│   ├── index.css    # TailwindCSS configuration
-│   ├── index.tsx    # Entry point
-├── public           # Static public files
-├── .eslintrc.js     # ESLint configuration
-├── vite.config.ts   # Vite configuration
-├── package.json     # Project dependencies
-└── README.md        # Documentation
+├── .storybook          # Storybook configuration
+├── public              # Static public files
+├── src                 # Source files
+│   ├── components      # React components
+│   │   ├── tests       # Component unit tests
+│   ├── modes           # Contains different game modes
+│   ├── pages           # High-level pages
+│   │   ├── tests       # Page unit tests
+│   ├── stories         # Component stories for Storybook
+│   ├── assets          # Images and static files
+│   ├── tests           # Integration tests
+│   ├── utils           # Utilities
+│   ├── App.tsx         # Main application component
+│   ├── index.css       # TailwindCSS configuration
+│   ├── index.tsx       # Entry point
+├── eslint.config.js    # ESLint configuration
+├── tailwind.config.js  # Tailwind configuration
+├── vite.config.ts      # Vite configuration
+├── package.json        # Project dependencies
+└── README.md           # Documentation
 ```
 
 ## Contributing
