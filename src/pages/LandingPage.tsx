@@ -3,7 +3,7 @@ import { Users, Clock, Globe } from 'lucide-react';
 
 export default function LandingPage() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
+    <div className="min-h-screen flex flex-col flex-grow items-center justify-center bg-gray-100 p-6">
       <h1 className="text-4xl font-bold text-gray-800 mb-6">Memory Game</h1>
       <p className="text-lg text-gray-600 mb-8">Select a game mode to start playing!</p>
 

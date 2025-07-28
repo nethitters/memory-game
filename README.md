@@ -87,17 +87,17 @@ Play the game here: [Memory Card Game](https://nethitters.github.io/memory-game/
 ├── public              # Static public files
 ├── src                 # Source files
 │   ├── components      # React components
-│   │   ├── tests       # Component unit tests
+│   │   └── tests       # Component unit tests
 │   ├── modes           # Contains different game modes
 │   ├── pages           # High-level pages
-│   │   ├── tests       # Page unit tests
+│   │   └── tests       # Page unit tests
 │   ├── stories         # Component stories for Storybook
 │   ├── assets          # Images and static files
 │   ├── tests           # Integration tests
 │   ├── utils           # Utilities
 │   ├── App.tsx         # Main application component
 │   ├── index.css       # TailwindCSS configuration
-│   ├── index.tsx       # Entry point
+│   └── index.tsx       # Entry point
 ├── eslint.config.js    # ESLint configuration
 ├── tailwind.config.js  # Tailwind configuration
 ├── vite.config.ts      # Vite configuration
