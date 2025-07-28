@@ -16,7 +16,7 @@ Play the game here: [Memory Card Game](https://nethitters.github.io/memory-game/
 - **Player Timers**: Each player has their own countdown timer.
 - **Animated Reset Button**: Resets the game with a zoom-in-out animation.
 - **Multiple Game Modes**: Play **Multiplayer**, **Survival**, or try upcoming **Online Play**.
-- **Testing**: Jest and React Testing Library are used for unit and integration tests.
+- **Testing**: Uses [Vitest](https://vitest.dev/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) for fast and modern component testing.
 
 ## Game Modes 🕹️
 
@@ -46,8 +46,10 @@ Play the game here: [Memory Card Game](https://nethitters.github.io/memory-game/
 
 ### Testing
 
-- **[Jest](https://jestjs.io/)** - A JavaScript testing framework.
-- **[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)** - Used for testing UI interactions.
+### Testing
+
+- **[Vitest](https://vitest.dev/)** - A blazing-fast test runner built for Vite.
+- **[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)** - Tests UI components by simulating user behavior.
 
 ### Linting & Code Quality
 
